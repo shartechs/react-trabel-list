@@ -1,14 +1,13 @@
 import React from "react";
+import Item from "./Item";
 
-const PackingList = () => {
+const PackingList = ({ items }) => {
   return (
     <div className="list">
       <ul>
-        <li>
-          <input type="checkbox" />
-          <span className="item-text">Item</span>
-          <button>❌</button>
-        </li>
+        {items.map((item) => (
+          <Item key={item.id} item={item} />
+        ))}
       </ul>
 
       <div className="actions">

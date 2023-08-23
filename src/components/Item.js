@@ -1,10 +1,12 @@
 import React from "react";
 
-const Item = () => {
+const Item = ({ item }) => {
   return (
     <li>
       <input type="checkbox" />
-      <span className="item-text">Item</span>
+      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+        {item.quantity} {item.name}
+      </span>
       <button>❌</button>
     </li>
   );
