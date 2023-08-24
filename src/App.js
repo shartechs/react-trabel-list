@@ -5,9 +5,7 @@ import PackingList from "./components/PackingList";
 import Stats from "./components/Stats";
 
 const App = () => {
-  const [items, setItems] = useState([
-    { id: 1, quantity: 5, name: "Item", packed: true },
-  ]);
+  const [items, setItems] = useState([]);
   const addNewItem = (item) => {
     setItems([item, ...items]);
   };
@@ -32,7 +30,7 @@ const App = () => {
         deleteItem={deleteItem}
         updateItem={updateItem}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 };
