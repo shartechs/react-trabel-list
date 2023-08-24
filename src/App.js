@@ -21,6 +21,15 @@ const App = () => {
       )
     );
   };
+
+  const clearItems = () => {
+    const confirmed = window.confirm(
+      "Are you sure you want to clear the list?"
+    );
+    if (confirmed) setItems([]);
+    else return;
+  };
+
   return (
     <div>
       <Logo />
@@ -29,6 +38,7 @@ const App = () => {
         items={items}
         deleteItem={deleteItem}
         updateItem={updateItem}
+        clearItems={clearItems}
       />
       <Stats items={items} />
     </div>
